@@ -12,7 +12,7 @@ The *colorMatrix* script gets as input three monochromatic images, with the same
 
 In the following images, the symbols with blue color represent the information you will enter as input in the dialog window the script will show you.
 
-![image](https://github.com/oscardelama/ImageJ-colorMatrix-js/blob/master/doc/img/colorMatrixTransformation.png)
+![image](https://github.com/oscardelama/ImageJ-colorMatrix-js/raw/master/doc/img/colorMatrixTransformation.png)
 
 The first step *colorMatrix* does is to apply the *color matrix* to the input channels in order to get intermediate RGB output channels (R<sup>d</sup>, G<sup>d</sup>, B<sup>d</sup>). Those intermediate output channels will have further processing as we shall see below.
 

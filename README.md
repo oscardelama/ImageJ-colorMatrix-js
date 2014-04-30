@@ -1,6 +1,6 @@
 colorMatrix
 ===========
-colorMatrix is an [ImageJ](http://imagej.nih.gov/ij/) script that helps you to transform an image from one RGB color space to another one, this transformation is made with the use of a *color matrix*.
+colorMatrix is an [ImageJ](http://imagej.nih.gov/ij/) script that helps you to transform an image from one RGB color space to another one. This transformation is made through the use of a *color matrix* given by you.
 
 This tool has been created for the study and evaluation of such color matrices. This way, you can analyse the results from one *color matrix* isolated from additional adjustments that are done to the image &mdash;officially or "under the hood"&mdash; when you use that color matrix inside of a photo or image editing tool.
 
@@ -26,7 +26,16 @@ Before to apply the *Gamma Correction* the pixel values are taken to the `[0,1]`
 
 ![image](https://github.com/oscardelama/ImageJ-colorMatrix-js/raw/master/doc/img/finalStepsSeudoCode.png)
 
-Finally, the intermediate channels are merged to build the final RGB image.
+Finally, the intermediate channels are merged to build and show you the resulting RGB image.
+
+Usage
+-----
+
+To run *colorMatrix* select the "colorMatrix" command from the corresponding *ImageJ* plugins menu option, according to where did you choose [install the script installation](#installation).
+
+![image](https://github.com/oscardelama/ImageJ-colorMatrix-js/raw/master/doc/img/runColorMatrix.png)
+
+
 
 Installation
 -------------
@@ -65,6 +74,6 @@ Please feel free to contact me for any suggestion at <my name> `at` odeLama `dot
 License
 -------
 
-By downloading colorMatrix you agree to the terms of use under Apache 2 License. Please check the [LICENSE](https://github.com/oscardelama/ImageJ-colorMatrix-js/blob/master/LICENSE) file for more information.
+By downloading colorMatrix you agree to the terms of use under [Apache 2 License](https://github.com/oscardelama/ImageJ-colorMatrix-js/blob/master/LICENSE.md). Please check the [LICENSE](https://github.com/oscardelama/ImageJ-colorMatrix-js/blob/master/LICENSE.md) file for more information.
 
   

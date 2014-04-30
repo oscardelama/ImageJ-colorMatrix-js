@@ -1,6 +1,6 @@
 colorMatrix
 ===========
-colorMatrix is an [ImageJ](http://imagej.nih.gov/ij/) script that helps you to transform an image from one RGB color space to another one. This transformation is made through the use of a *color matrix* given by you.
+colorMatrix is an [ImageJ](http://imagej.nih.gov/ij/) script (*colorMatrix*)that helps you to transform an image from one RGB color space to another one. This transformation is made through the use of a *color matrix* given by you.
 
 This tool has been created for the study and evaluation of such color matrices. This way, you can analyse the results from one *color matrix* isolated from additional adjustments that are done to the image &mdash;officially or "under the hood"&mdash; when you use that color matrix inside of a photo or image editing tool.
 
@@ -40,7 +40,7 @@ To run *colorMatrix* select the "colorMatrix" command from the corresponding *Im
 Installation
 -------------
 
-To install the colorMatrix script, you just have to download it and drop it in the *plugins* folder under the *ImageJ* installation folder. The actual location of that folder in your computer depends on what did you chose during *ImageJ* installation. In the following section we will assume you installed *ImageJ* in the folder suggested by the installer. If that is not the case use the corresponding folder.
+To install *colorMatrix*, you just have to download it and drop it in the *plugins* folder under the *ImageJ* installation folder. The actual location of that folder in your computer depends on what did you chose during *ImageJ* installation. In the following section we will assume you installed *ImageJ* in the folder suggested by the installer. If that is not the case use the corresponding folder.
 
 ### Windows ###
 
@@ -74,6 +74,6 @@ Please feel free to contact me for any suggestion at <my name> `at` odeLama `dot
 License
 -------
 
-By downloading colorMatrix you agree to the terms of use under [Apache 2 License](https://github.com/oscardelama/ImageJ-colorMatrix-js/blob/master/LICENSE.md). Please check the [LICENSE](https://github.com/oscardelama/ImageJ-colorMatrix-js/blob/master/LICENSE.md) file for more information.
+By downloading *colorMatrix* you agree to the terms of use under [Apache 2 License](https://github.com/oscardelama/ImageJ-colorMatrix-js/blob/master/LICENSE.md). Please check the [LICENSE](https://github.com/oscardelama/ImageJ-colorMatrix-js/blob/master/LICENSE.md) file for more information.
 
   

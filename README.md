@@ -8,13 +8,19 @@ To find out the usage of JavaScript scripting in ImageJ [please check this Image
 
 What it does
 -------------
-The *colorMatrix* script gets as input three monochromatic images, with the same dimensions, representing the input red, green and blue channels (R<sup>s</sup>, G<sup>s</sup>, B<sup>s</sup>). *colorMatrix* also gets as input a 3x3 *color matrix*.  
+The *colorMatrix* script gets as input three monochromatic images, with the same dimensions, representing the input red, green and blue channels (R<sub>s</sub>, G<sub>s</sub>, B<sub>s</sub>). *colorMatrix* also gets as input a 3x3 *color matrix*.  
 
 In the following images, the symbols with blue color represent the information you will enter as input in the dialog window the script will show you.
 
 ![image](https://github.com/oscardelama/ImageJ-colorMatrix-js/raw/master/doc/img/colorMatrixTransformation.png)
 
-The first step *colorMatrix* does is to apply the *color matrix* to the input channels in order to get intermediate RGB output channels (R<sup>d</sup>, G<sup>d</sup>, B<sup>d</sup>). Those intermediate output channels will have further processing as we shall see below.
+The first step *colorMatrix* does is apply your *color matrix* to the input channels in order to get intermediate RGB output channels (R<sub>d</sub>, G<sub>d</sub>, B<sub>d</sub>). Those intermediate output channels will have further processing before they are merged to build a RGB image, as is depicted with pseudo-code in the following picture. Remember the blue symbols are data you will input in *colorMatrix* dialog window. 
+
+![image](https://github.com/oscardelama/ImageJ-colorMatrix-js/raw/master/doc/img/RangeAndGammaStepsPesudoCode.png)
+
+After the color matrix transformation, each pixel value in each intermediate channel is check out to ensure if it is between a given minimum and maximum ADU values. If it is not, the pixel value is clipped to the minimum or maximum value correspondingly.
+
+As 
 
 Installation
 -------------

@@ -18,7 +18,9 @@ The first step *colorMatrix* does is apply your *color matrix* to the input chan
 
 ![image](https://github.com/oscardelama/ImageJ-colorMatrix-js/raw/master/doc/img/RangeAndGammaStepsPesudoCode.png)
 
-After the color matrix transformation, each pixel value in each intermediate channel is check out to ensure if it is between a given minimum and maximum ADU values. If it is not, the pixel value is clipped to the minimum or maximum value correspondingly.
+After the color matrix transformation, each pixel value in each intermediate channel is check out to ensure if it is between a given minimum and maximum ADU values. If it is not, the pixel value is clipped to the minimum or maximum value correspondingly. 
+
+Later, a *Gamma correction* function is applied to each pixel value. This is an optional step, if the gamma value is 1, this step is not executed at all. Notice the gamma value is specified with its reciprocal value, so to apply a gamma correction of `1/2.2` your input for the gamma value must be `2.2`. Before to apply the gamma function the pixel values are taken to the `[0,1]` domain dividing the pixel value by the given maximum ADU value.
 
 As 
 

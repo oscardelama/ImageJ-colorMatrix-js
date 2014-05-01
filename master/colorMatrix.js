@@ -31,7 +31,7 @@ var globalConstants =
 + "GREEN   = 1,"
 + "BLUE    = 2,"
 // Plug-in version number
-+ "VER_NBR = '1.0'"
++ "VER_NBR = '1.0',"
 // buildOutChannel() function result indices
 + "IMG_PLUS  = 0,"
 + "IMG_NAME  = 1;";
@@ -388,6 +388,9 @@ function buildOutChannel(inChannels, options, color) {
     IJ.run(outChannel, "Multiply...", "value="+options["outChannelAdu"]["max"]);
   }
 
+  // Set the proper title
+  outChannel.setTitle(imageName);
+  
   // Save if required
   if (options["saveOutputChannels"])
     IJ.saveAs(outChannel, "FITS", imageName);

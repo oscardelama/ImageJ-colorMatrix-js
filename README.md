@@ -10,14 +10,16 @@ Table of Contents
 -----------------
 - [What it does](#what-it-does)  
 - [Usage](#usage)  
-  * [Input color channels](input-color-channels)  
-  * [Output Image Options](output-image-options)  
+  * [Input color channels](#input-color-channels)  
+  * [Output Image Options](#output-image-options)  
+  * [The color Matrix](#the-color-matrix)  
 - [Installation](#installation)  
   * [Windows](#windows)  
   * [Linux](#linux)  
   * [Mac OS X](#mac-os-x)  
 - [Contact](#contact)  
 - [License](#license)  
+
 ----
 
 What it does
@@ -82,7 +84,7 @@ For the each of the **Red Channel**, **Green Channel** and **Blue Channel** para
     If you don't want *Gamma Correction* you must enter `1` for this parameter, you can not leave a blank here, otherwise you will get a message error. If you set `1` for this parameter nothing related to *Gamma Correction* at all will be done to the channels.
     
 *   **Minimum output ADU**
-    **Maximum output ADU**
+*   **Maximum output ADU**
     You must enter here the minimum and maximum admitted values for each pixel RGB color component value. If the color value is lesser than the given minimum value, it will be set (clipped) to that minimum value. If the color value is greater than the given maximum value, it will be set (clipped) to that maximum value.
     
 ### The color Matrix ###
@@ -92,10 +94,9 @@ In this section you must enter the color matrix component values.
 *   **Scales for output Red channel**
 *   **Scales for output Green channel**
 *   **Scales for output Blue channel**
+    Corresponds to the each row of the **M** matrix shown in [the section "What it does"](#what-it-does).
     
-    Corresponds to the each row of the M matrix shown in [the section "What it does"](#what-it-does).
-    
-As a helper, there is a multi-line area, where you can paste a spreadsheet range of 3 by 3 cells, in which case the corresponding values will be moved to the corresponding matrix components
+As a helper, there is a multi-line area, where you can paste a spreadsheet range of 3 by 3 cells, in which case the corresponding values will be moved to the corresponding matrix components.
 
 In the same sense, if you paste a spreadsheet horizontal selection of three cells, in the parameter corresponding to beginning of a matrix row (e.g. red.Red, green.Red, blue.Red) each of the three cell values will be assigned to the three parameters corresponding to the row.
 

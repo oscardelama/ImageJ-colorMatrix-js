@@ -61,7 +61,7 @@ In this section you must define the monochromatic images that will be used as in
 
 Before calling *colorMatrix*, you must have at least two images opened in *ImageJ*. You will probably want to have three images opened, one for each RGB input channel.
 
-For the each of the "**Red Channel**", "**Green Channel**" and "**Blue Channel**" parameters you must select one of the opened images. 
+For the each of the **Red Channel**, **Green Channel** and **Blue Channel** parameters you must select one of the opened images. 
 
 *colorMatrix* will try to guess which of the opened images corresponds to each parameter and will show the dialog with those image titles selected as default values. The guessing is made by checking the image titles. If any of them contain the sub-strings "_r", "_g" or "_b" (for red, green and blue), it will be selected as the default image for the corresponding RGB channel. If there is no matching, *colorMatrix* will just select the first image in the *ImageJ* list of opened images. In any case, you can override this default selection and pick up the image you really want to use for each channel.
 
@@ -77,12 +77,12 @@ For the each of the "**Red Channel**", "**Green Channel**" and "**Blue Channel**
     
     If you don't select this options, *colorMatrix* will anyway ask you if it is OK for you to close each of the resulting RGB image channels. This is an *ImageJ* behavior that can not be overrode.
     
-*   Gamma: You must enter here the reciprocal of the value to be used as *Gamma Correction* of the resulting channels. For example, for a gamma correction of 1/2.4 you should enter here `2.4`.
+*   **Gamma**: You must enter here the reciprocal of the value to be used as *Gamma Correction* of the resulting channels. For example, for a gamma correction of 1/2.4 you should enter here `2.4`.
 
     If you don't want *Gamma Correction* you must enter `1` for this parameter, you can not leave a blank here, otherwise you will get a message error. If you set `1` for this parameter nothing related to *Gamma Correction* at all will be done to the channels.
     
 *   **Minimum output ADU**
-*   **Maximum output ADU**
+    **Maximum output ADU**
     You must enter here the minimum and maximum admitted values for each pixel RGB color component value. If the color value is lesser than the given minimum value, it will be set (clipped) to that minimum value. If the color value is greater than the given maximum value, it will be set (clipped) to that maximum value.
     
 ### The color Matrix ###
@@ -92,6 +92,7 @@ In this section you must enter color matrix component values.
 *   **Scales for output Red channel**
 *   **Scales for output Green channel**
 *   **Scales for output Blue channel**
+
     Corresponds to the each row of the M matrix shown in [the section "What it does"](#what-it-does).
     
 As a helper, there is a multi-line area, where you can paste a spreadsheet range of 3 by 3 cells, in which case the corresponding values will be moved to the corresponding matrix components

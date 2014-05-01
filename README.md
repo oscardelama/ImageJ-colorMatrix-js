@@ -55,20 +55,23 @@ To run *colorMatrix* select the "colorMatrix" command from the corresponding *Im
 
 ### Input color channels ###
 
-In this section you must define the monochromatic images that shall be used as input RGB channels. They are represented by (R<sub>s</sub>, G<sub>s</sub>, B<sub>s</sub>) in the section [What it does](#what-it-does). This images must have the same dimensions in order to have red, green and blue values for each pixel in the resulting image, which &mdash;of course&mdash; will have those common dimensions .
+In this section you must define the monochromatic images that shall be used as input RGB channels. They are represented by (R<sub>s</sub>, G<sub>s</sub>, B<sub>s</sub>) [in the section "What it does"](#what-it-does). This images must have the same dimensions in order to have red, green and blue values for each pixel in the resulting image, which &mdash;of course&mdash; will have those common dimensions .
 
 Before calling *colorMatrix*, you must have at least two images opened in *ImageJ*. You will probably want to have three images opened, one for each RGB input channel.
 
 For the each of the "Red Channel", "Green Channel" and "Blue Channel" parameters you must select one of the opened images. 
 
-*colorMatrix* will try to guess which of the opened images corresponds to each parameter and will show the dialog with those images selected as default values. The guessing is made by checking the image titles. If any of them contains the sub-strings "_r", "_g" or "_b" (red, green and blue) will be selected as default image for the corresponding RGB channel. If there is no matching, *colorMatrix* will just select the first image in the *ImageJ* list of opened images. In any case, you can override this default selection and pick the image you really want to use for each channel.
+*colorMatrix* will try to guess which of the opened images corresponds to each parameter and will show the dialog with those image titles selected as default values. The guessing is made by checking the image titles. If any of them contain the sub-strings "_r", "_g" or "_b" (for red, green and blue), it will be selected as the default image for the corresponding RGB channel. If there is no matching, *colorMatrix* will just select the first image in the *ImageJ* list of opened images. In any case, you can override this default selection and pick up the image you really want to use for each channel.
 
 ### Output Image Options ###
 
-*   Output image file name: Is the title will have the resulting image.
-*   Save output image channels: If this option is selected, each resulting channel will be saved. The "resulting channels" are those referred as (R<sub>d</sub>, G<sub>d</sub>, B<sub>d</sub>) in [the section "What it does"](#what-it-does) in their state at the end of the processing. 
+*   **Output image file name**: Is the title will have the resulting image.
+
+*   **Save output image channels**: If this option is selected, each resulting channel will be saved. The "resulting channels" are those referred as (R<sub>d</sub>, G<sub>d</sub>, B<sub>d</sub>) in [the section "What it does"](#what-it-does) in their state at the end of the processing.
+
     This is useful because the final RGB composite image in *ImageJ* is unavoidable an 8-bit per channel image and you may have output channels with more precision you want to keep. 
     For example, if you have 14-bit input channels, you will have 14-bit output channels, and you may want the result of the process at that level of precision.
+    
     If you don't select this options, *colorMatrix* anyway will ask you if is OK for you to close each of the resulting RGB image channels. This is an *ImageJ* behavior that can not be overrided.
 
 Installation

@@ -8,7 +8,7 @@ This tool has been created for the study and evaluation of such color matrices. 
 - - - - 
 Table of Contents
 -----------------
-- [What it does](#what-it-does)  
+- [What it does :question:](#what-it-does-question)  
 - [Usage](#usage)  
   * [Input color channels](#input-color-channels)  
   * [Output Image Options](#output-image-options)  
@@ -59,7 +59,7 @@ To run *colorMatrix* select the "colorMatrix" command from the corresponding *Im
 
 ### Input color channels ###
 
-In this section you must define the monochromatic images that will be used as input RGB channels. They are represented by (R<sub>s</sub>, G<sub>s</sub>, B<sub>s</sub>) [in the section "What it does"](#what-it-does). This images must have the same dimensions in order to have red, green and blue values for each pixel in the resulting image, which &mdash;of course&mdash; will have those common dimensions .
+In this section you must define the monochromatic images that will be used as input RGB channels. They are represented by (R<sub>s</sub>, G<sub>s</sub>, B<sub>s</sub>) [in the section "What it does"](#what-it-does-question). This images must have the same dimensions in order to have red, green and blue values for each pixel in the resulting image, which &mdash;of course&mdash; will have those common dimensions .
 
 Before calling *colorMatrix*, you must have at least two images opened in *ImageJ*. You will probably want to have three images opened, one for each RGB input channel.
 
@@ -71,7 +71,7 @@ For the each of the **Red Channel**, **Green Channel** and **Blue Channel** para
 
 *   **Output image file name**: Is the title will have the resulting image.
 
-*   **Save output image channels**: If this option is selected, each resulting channel will be saved. The "resulting channels" are those referred as (R<sub>d</sub>, G<sub>d</sub>, B<sub>d</sub>) in [the section "What it does"](#what-it-does) in their state at the end of the processing.
+*   **Save output image channels**: If this option is selected, each resulting channel will be saved. The "resulting channels" are those referred as (R<sub>d</sub>, G<sub>d</sub>, B<sub>d</sub>) in [the section "What it does"](#what-it-does-question) in their state at the end of the processing.
 
     This is useful because the final RGB composite image in *ImageJ* is unavoidable an only 8-bit per channel image, and you may have output channels with more precision than that, that you may want to keep.
     
@@ -94,7 +94,7 @@ In this section you must enter the color matrix component values.
 *   **Scales for output Red channel**
 *   **Scales for output Green channel**
 *   **Scales for output Blue channel**
-    Corresponds to the each row of the **M** matrix shown in [the section "What it does"](#what-it-does).
+    Corresponds to the each row of the **M** matrix shown in [the section "What it does"](#what-it-does-question).
     
 As a helper, there is a multi-line area, where you can paste a spreadsheet range of 3 by 3 cells, in which case the range values are moved to the corresponding matrix components.
 
@@ -104,7 +104,7 @@ In the same sense, if you paste a spreadsheet horizontal range selection of thre
 
 ![image](https://github.com/oscardelama/ImageJ-colorMatrix-js/raw/master/doc/img/CopyPasteMatrixRowValues.png "Copy & Paste Matrix row values")
 
-Of courser, it is not mandatory to copy and paste the matrix values. You can enter them one by one.
+Of courser, it is not mandatory to copy and paste the matrix values. You can enter and edit them one by one.
 
 Installation
 -------------

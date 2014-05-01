@@ -6,6 +6,7 @@ This tool has been created for the study and evaluation of such color matrices. 
 
 To find out the usage of JavaScript scripting in ImageJ [please check this ImageJ page](http://rsbweb.nih.gov/ij/developer/javascript.html).
 
+
 ----
 Table of Contents
 -----------------
@@ -39,9 +40,9 @@ Those intermediate output channels will have further processing before they are 
 
 After the color matrix transformation, each pixel value in each intermediate channel is check out to ensure if it is between a given minimum and maximum ADU values. If it is not, the pixel value is clipped to the minimum or maximum value correspondingly. 
 
-Later, a [*Gamma Correction*](http://en.wikipedia.org/wiki/Gamma_correction) function is applied to each pixel value on each channel. This is an optional step, if the *gamma* parameter is equal to 1, this step is not executed at all. Notice the gamma value is specified with its reciprocal value, so to apply a *Gamma Correction* of `1/2.2` your input for the gamma value must be `2.2`. 
+Later, a [*Gamma Correction*](http://en.wikipedia.org/wiki/Gamma_correction) function is applied to each pixel value on each channel. This is an optional step, if the *gamma* parameter is equal to 1, this step is not executed at all. Notice the gamma value is specified with its reciprocal value. To apply a *Gamma Correction* of `1/2.2` your input for the gamma value must be `2.2`. 
 
-Before to apply the *Gamma Correction* the pixel values are taken to the `[0,1]` domain dividing the pixel value by the given maximum ADU value. After the gamma correction the pixel value is returned to its original domain by multiplying the result of the *Gamma Correction* by the given maximum ADU value.
+The *Gamma Correction* is applied to the pixel color values in the domain `[0,1]`. Before the correction, the pixel values are divided by the given **Maximum output ADU** value. After the *Gamma Correction* the pixel values are returned to its original domain by multiplying the result by the **Maximum output ADU** value.
 
 ![image](https://github.com/oscardelama/ImageJ-colorMatrix-js/raw/master/doc/img/finalStepsSeudoCode.png "Final steps seudo-code")
 
@@ -97,11 +98,13 @@ In this section you must enter the color matrix component values.
 *   **Scales for output Blue channel**
     Corresponds to the each row of the **M** matrix shown in [the section "What it does"](#what-it-does).
     
-As a helper, there is a multi-line area, where you can paste a spreadsheet range of 3 by 3 cells, in which case the corresponding values will be moved to the corresponding matrix components.
+As a helper, there is a multi-line area, where you can paste a spreadsheet range of 3 by 3 cells, in which case the corresponding values ware moved to the corresponding matrix components.
 
 ![image](https://github.com/oscardelama/ImageJ-colorMatrix-js/raw/master/doc/img/CopyPasteMatrixValues.png "Copy & Paste Matrix component values")
 
 In the same sense, if you paste a spreadsheet horizontal selection of three cells, in the parameter corresponding to beginning of a matrix row (e.g. red.Red, green.Red, blue.Red) each of the three cell values will be assigned to the three parameters corresponding to the row.
+
+![image](https://github.com/oscardelama/ImageJ-colorMatrix-js/raw/master/doc/img/CopyPasteMatrixRowValues.png "Copy & Paste Matrix row values")
 
 Installation
 -------------

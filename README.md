@@ -42,16 +42,30 @@ Finally, the intermediate channels are merged to build and show you the resultin
 Usage
 -----
 
-To run *colorMatrix* select the "colorMatrix" command from the corresponding *ImageJ* plugins menu option, according to where did you choose [install the script installation](#installation).
+To run *colorMatrix* select the "colorMatrix" command from the corresponding *ImageJ* plugins menu option, the one you chose during the [script installation](#installation).
 
 ![image](https://github.com/oscardelama/ImageJ-colorMatrix-js/raw/master/doc/img/runColorMatrix.png)
+
+*colorMatrix* will show you a dialog window where you can input the required parameters.
+
+![image](https://github.com/oscardelama/ImageJ-colorMatrix-js/raw/master/doc/img/colorMatrixDialogWindow.png)
+
+### Input color channels ###
+
+In this section you define the monochromatic images to be used as input RGB channels. They are represented by (R<sub>s</sub>, G<sub>s</sub>, B<sub>s</sub>) in the section [What it does](#what-it-does). This images must have the same dimensions in order to have red, green and blue values for each pixel in the resulting image.
+
+Before calling *colorMatrix*, you must have at least two images opened in ImageJ. You will probably want to have three image opened, one for each RGB input channel.
+
+You must select one of the opened images for the "Red Channel", "Green Channel" and "Blue Channel" parameters. 
+
+*colorMatrix* will try to guess which of the opened images corresponds to each parameter by checking if their names. If any of them contains "_r", "_g" or "_b" will be selected correspondingly as default image for each RGB channel. If there is no matching, *colorMatrix* will just select the first image in the *ImageJ list of opened images. In any case you can override this default selection and pick the image you want to use for each channel.
 
 
 
 Installation
 -------------
 
-To install *colorMatrix*, you just have to download it and drop it in the *plugins* folder under the *ImageJ* installation folder. The actual location of that folder in your computer depends on what did you chose during *ImageJ* installation. In the following section we will assume you installed *ImageJ* in the folder suggested by the installer. If that is not the case use the corresponding folder.
+To install *colorMatrix*, you just have to [download the latest version](https://github.com/oscardelama/ImageJ-colorMatrix-js/blob/master/master/colorMatrix.js) and drop it in the *plugins* folder under the *ImageJ* installation folder. The actual location of that folder in your computer depends on what did you chose during *ImageJ* installation. In the following section we will assume you installed *ImageJ* in the folder suggested by the installer. If that is not the case use the corresponding folder.
 
 ### Windows ###
 

@@ -1,12 +1,12 @@
-Welcome to colorMatrix
-=======================
+Welcome to colorMatrix :large_blue_diamond:
+===========================================
 colorMatrix is an [ImageJ](http://imagej.nih.gov/ij/) script (*colorMatrix*)that helps you to transform an image from one RGB color space to another one. This transformation is made through the use of a *color matrix* given by you.
 
 This tool has been created for the study and evaluation of such color matrices. This way, you can analyse the results from one *color matrix* isolated from additional adjustments that are done to the image &mdash;officially or "under the hood"&mdash; when you use that color matrix inside of a photo or image editing tool.
 
 To find out the usage of JavaScript scripting in ImageJ [please check this ImageJ page](http://rsbweb.nih.gov/ij/developer/javascript.html).
 
-
+<br/>
 ----
 Table of Contents
 -----------------
@@ -89,7 +89,7 @@ For the each of the **Red Channel**, **Green Channel** and **Blue Channel** para
 *   **Maximum output ADU**
     You must enter here the minimum and maximum admitted values for each pixel RGB color component value. If the color value is lesser than the given minimum value, it will be set (clipped) to that minimum value. If the color value is greater than the given maximum value, it will be set (clipped) to that maximum value.
     
-### The color Matrix ###
+### The Color Matrix ###
 
 In this section you must enter the color matrix component values.
 
@@ -98,26 +98,28 @@ In this section you must enter the color matrix component values.
 *   **Scales for output Blue channel**
     Corresponds to the each row of the **M** matrix shown in [the section "What it does"](#what-it-does).
     
-As a helper, there is a multi-line area, where you can paste a spreadsheet range of 3 by 3 cells, in which case the corresponding values ware moved to the corresponding matrix components.
+As a helper, there is a multi-line area, where you can paste a spreadsheet range of 3 by 3 cells, in which case the range values are moved to the corresponding matrix components.
 
 ![image](https://github.com/oscardelama/ImageJ-colorMatrix-js/raw/master/doc/img/CopyPasteMatrixValues.png "Copy & Paste Matrix component values")
 
-In the same sense, if you paste a spreadsheet horizontal selection of three cells, in the parameter corresponding to beginning of a matrix row (e.g. red.Red, green.Red, blue.Red) each of the three cell values will be assigned to the three parameters corresponding to the row.
+In the same sense, if you paste a spreadsheet horizontal range selection of three cells in the parameter corresponding to beginning of a matrix row (e.g. red.Red, green.Red or blue.Red), each of the three cell values will be assigned to the corresponding row element.
 
 ![image](https://github.com/oscardelama/ImageJ-colorMatrix-js/raw/master/doc/img/CopyPasteMatrixRowValues.png "Copy & Paste Matrix row values")
+
+Of courser, it is not mandatory to copy and paste the matrix values. You can enter them one by one.
 
 Installation
 -------------
 
-To install *colorMatrix*, you just have to [download the latest version](https://github.com/oscardelama/ImageJ-colorMatrix-js/blob/master/master/colorMatrix.js) and drop it in the *plugins* folder under the *ImageJ* installation folder. The actual location of that folder in your computer depends on what did you chose during *ImageJ* installation. In the following section we will assume you installed *ImageJ* in the folder suggested by the installer. If that is not the case use the corresponding folder.
+To install *colorMatrix*, you just have to [download the latest version](https://github.com/oscardelama/ImageJ-colorMatrix-js/blob/master/master/colorMatrix.js) and drop it in the *plugins* folder under the *ImageJ* installation folder. The actual location of that folder in your computer depends on which one did you chose during the installation of *ImageJ*. In the following section we will assume you installed *ImageJ* in the folder suggested by its installer. If that is not the case use the corresponding folder.
 
 ### Windows ###
 
-On Windows OS the *plugin* folder path is:
+On Windows OS, the *plugin* folder path is:
 
     C:\Program Files\ImageJ\plugins
 
-However, to keep a tidy *plugin* folder structure we recommend you to create a new folder under the plugin one &mdash;for example *RGB Scripts*&mdash; and drop there the script. This way, at the end you will the have the script with this full path:
+However, to keep a tidy *plugin* folder structure, we recommend you to create a new folder under the *plugin* one &mdash;for example *"RGB Scripts"*&mdash; and drop there the script. This way, at the end you will the have the script with this full path and file name:
 
     C:\Program Files\ImageJ\plugins\RGB Scripts\colorMatrix.js
 
@@ -136,7 +138,7 @@ Follow the same steps as described above for Windows. However, in Mac OS X, the 
 
 Contact
 -------
-Please feel free to contact me for any suggestion at &lt;my name&gt; `at` odeLama `dot` com. By the way, &lt;my name&gt; is Oscar.
+Please feel free to contact me for any suggestion. Yo can :email: at &lt;my name&gt; `at` odeLama `dot` com. By the way, &lt;my name&gt; is Oscar.
 
 License
 -------

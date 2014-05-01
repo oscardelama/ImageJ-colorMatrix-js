@@ -1,10 +1,8 @@
 Welcome to colorMatrix :large_blue_diamond:
 ===========================================
-colorMatrix is an [ImageJ](http://imagej.nih.gov/ij/) script (*colorMatrix*)that helps you to transform an image from one RGB color space to another one. This transformation is made through the use of a *color matrix* given by you.
+colorMatrix is an [ImageJ](http://imagej.nih.gov/ij/) script (*colorMatrix*) that helps you to transform an image from one RGB color space to another one. This transformation is made through the use of a *color matrix* given by you.
 
 This tool has been created for the study and evaluation of such color matrices. This way, you can analyse the results from one *color matrix* isolated from additional adjustments that are done to the image &mdash;officially or "under the hood"&mdash; when you use that color matrix inside of a photo or image editing tool.
-
-To find out the usage of JavaScript scripting in ImageJ [please check this ImageJ page](http://rsbweb.nih.gov/ij/developer/javascript.html).
 <br/>
 
 - - - - 
@@ -24,8 +22,8 @@ Table of Contents
 
 ----
 
-What it does
--------------
+What it does :question:
+------------------------
 The *colorMatrix* script gets as input three monochromatic images, with the same dimensions, representing the input red, green and blue channels (R<sub>s</sub>, G<sub>s</sub>, B<sub>s</sub>). *colorMatrix* also gets as input a 3x3 *color matrix*.  
 
 In the following images, the symbols with blue color represent the information you will enter as input in the dialog window the script will show you.

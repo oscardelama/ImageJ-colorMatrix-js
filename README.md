@@ -5,9 +5,9 @@ colorMatrix is an [ImageJ](http://imagej.nih.gov/ij/) script (*colorMatrix*)that
 This tool has been created for the study and evaluation of such color matrices. This way, you can analyse the results from one *color matrix* isolated from additional adjustments that are done to the image &mdash;officially or "under the hood"&mdash; when you use that color matrix inside of a photo or image editing tool.
 
 To find out the usage of JavaScript scripting in ImageJ [please check this ImageJ page](http://rsbweb.nih.gov/ij/developer/javascript.html).
-
 <br/>
-----
+
+- - - - 
 Table of Contents
 -----------------
 - [What it does](#what-it-does)  
@@ -138,7 +138,7 @@ Follow the same steps as described above for Windows. However, in Mac OS X, the 
 
 Contact
 -------
-Please feel free to contact me for any suggestion. Yo can :email: at &lt;my name&gt; `at` odeLama `dot` com. By the way, &lt;my name&gt; is Oscar.
+Please feel free to contact me for any suggestion. Yo can :email: at "&lt;my name&gt; `at` odeLama `dot` com". By the way, &lt;my name&gt; is Oscar.
 
 License
 -------

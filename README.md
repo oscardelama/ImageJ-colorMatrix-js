@@ -6,6 +6,7 @@ This tool has been created for the study and evaluation of such color matrices. 
 
 To find out the usage of JavaScript scripting in ImageJ [please check this ImageJ page](http://rsbweb.nih.gov/ij/developer/javascript.html).
 
+----
 Table of Contents
 -----------------
 - [What it does](#what-it-does)  
@@ -84,7 +85,7 @@ For the each of the **Red Channel**, **Green Channel** and **Blue Channel** para
     If you don't want *Gamma Correction* you must enter `1` for this parameter, you can not leave a blank here, otherwise you will get a message error. If you set `1` for this parameter nothing related to *Gamma Correction* at all will be done to the channels.
     
 *   **Minimum output ADU**
-*   **Maximum output ADU**
+    **Maximum output ADU**
     You must enter here the minimum and maximum admitted values for each pixel RGB color component value. If the color value is lesser than the given minimum value, it will be set (clipped) to that minimum value. If the color value is greater than the given maximum value, it will be set (clipped) to that maximum value.
     
 ### The color Matrix ###

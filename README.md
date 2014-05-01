@@ -87,12 +87,11 @@ For the each of the **Red Channel**, **Green Channel** and **Blue Channel** para
     
 ### The color Matrix ###
 
-In this section you must enter color matrix component values.
+In this section you must enter the color matrix component values.
 
 *   **Scales for output Red channel**
 *   **Scales for output Green channel**
 *   **Scales for output Blue channel**
-
     Corresponds to the each row of the M matrix shown in [the section "What it does"](#what-it-does).
     
 As a helper, there is a multi-line area, where you can paste a spreadsheet range of 3 by 3 cells, in which case the corresponding values will be moved to the corresponding matrix components

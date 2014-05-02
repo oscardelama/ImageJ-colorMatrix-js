@@ -36,7 +36,7 @@ Those intermediate output channels will have further processing before they are 
 
 ![image](https://github.com/oscardelama/ImageJ-colorMatrix-js/raw/master/doc/img/RangeAndGammaStepsPesudoCode.png "Range clipping & Gamma Correction pseudo-Code")
 
-After the color matrix transformation, each pixel value in each intermediate channel is check out to ensure it is in a given range of `[Min, Max]` ADU values. If it is not, the pixel value is clipped to the minimum or maximum value correspondingly. 
+After the color matrix transformation, each pixel value in each intermediate channel is checked out to ensure it is in a given range of `[Min, Max]` ADU values. If it is not, the pixel value is clipped to the minimum or maximum value correspondingly. 
 
 Later, a [*Gamma Correction*](http://en.wikipedia.org/wiki/Gamma_correction) is applied to each pixel value on each channel. This is an optional step, if the *gamma* parameter is equal to 1, this step is not executed at all. Notice the gamma value is specified with its reciprocal value. For example, to apply a *Gamma Correction* of `1/2.2` your input for the gamma value must be `2.2`. 
 
@@ -57,9 +57,9 @@ To run *colorMatrix* select the "colorMatrix" command from the corresponding *Im
 
 ![image](https://github.com/oscardelama/ImageJ-colorMatrix-js/raw/master/doc/img/colorMatrixDialogWindow.png "colorMatrix dialog window")
 
-### Input color channels ###
+### Input Color Channels ###
 
-In this section you must define the monochromatic images that will be used as input RGB channels. They are represented by (R<sub>s</sub>, G<sub>s</sub>, B<sub>s</sub>) [in the section "What it does"](#what-it-does-question). This images must have the same dimensions in order to have red, green and blue values for each pixel in the resulting image, which &mdash;of course&mdash; will have those common dimensions .
+In this section you must define the monochromatic images that will be used as input RGB channels. They are represented by (R<sub>s</sub>, G<sub>s</sub>, B<sub>s</sub>) [in the section "What it does"](#what-it-does-question). These images must have the same dimensions in order to have red, green and blue values for each pixel in the resulting image, which &mdash;of course&mdash; will have those common dimensions .
 
 Before calling *colorMatrix*, you must have at least two images opened in *ImageJ*. You will probably want to have three images opened, one for each RGB input channel.
 

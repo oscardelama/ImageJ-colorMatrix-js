@@ -104,12 +104,12 @@ In the same sense, if you paste a spreadsheet horizontal range selection of thre
 
 ![image](https://github.com/oscardelama/ImageJ-colorMatrix-js/raw/master/doc/img/CopyPasteMatrixRowValues.png "Copy & Paste Matrix row values")
 
-Of courser, it is not mandatory to copy and paste the matrix values. You can enter and edit them one by one.
+Of course, it is not mandatory to copy and paste the matrix values. You can enter and edit them one by one.
 
 Installation
 -------------
 
-To install *colorMatrix*, you just have to [download the latest version](https://github.com/oscardelama/ImageJ-colorMatrix-js/blob/master/master/colorMatrix.js) and drop it in the *plugins* folder under the *ImageJ* installation folder. The actual location of that folder in your computer depends on which one did you chose during the installation of *ImageJ*. In the following section we will assume you installed *ImageJ* in the folder suggested by its installer. If that is not the case use the corresponding folder.
+To install *colorMatrix*, you just have to [download the latest version](https://github.com/oscardelama/ImageJ-colorMatrix-js/blob/master/master/colorMatrix.js) and drop it in the *plugins* folder under the *ImageJ* installation folder. The actual location of that folder in your computer depends on which one you chose during the installation of *ImageJ*. In the following section we will assume you installed *ImageJ* in the folder suggested by its installer. If that is not the case use the corresponding folder.
 
 ### Windows ###
 

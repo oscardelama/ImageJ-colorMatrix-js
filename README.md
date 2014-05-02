@@ -138,8 +138,8 @@ Contact
 -------
 Please feel free to contact me for any suggestion. You can sen your :email: to "oscar `at` odeLama `dot` com".
 
-License
--------
+:copyright: License
+-------------------
 
 By downloading *colorMatrix* you agree to the terms of use under [Apache 2 License](https://github.com/oscardelama/ImageJ-colorMatrix-js/blob/master/LICENSE.md). Please check the [LICENSE](https://github.com/oscardelama/ImageJ-colorMatrix-js/blob/master/LICENSE.md) file for more information.
 

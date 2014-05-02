@@ -8,7 +8,7 @@ This tool has been created for the study and evaluation of such color matrices. 
 - - - - 
 Table of Contents
 -----------------
-- [What it does :question:](#what-it-does-question)  
+- [What it does :question:](#what-it-does)  
 - [Usage](#usage)  
   * [Input color channels](#input-color-channels)  
   * [Output Image Options](#output-image-options)  
@@ -22,7 +22,7 @@ Table of Contents
 
 ----
 
-What it does :question:
+What it does
 ------------------------
 The *colorMatrix* script gets as input three monochromatic images, with the same dimensions, representing the input red, green and blue channels (R<sub>s</sub>, G<sub>s</sub>, B<sub>s</sub>). *colorMatrix* also gets as input a 3x3 *color matrix*.  
 
@@ -30,7 +30,7 @@ In the following images, the symbols with blue color represent the information y
 
 ![image](https://github.com/oscardelama/ImageJ-colorMatrix-js/raw/master/doc/img/colorMatrixTransformation.png "Color Matrix Transformation")
 
-The first step *colorMatrix* does is to apply your *color matrix* to the input channels in order to get the intermediate RGB output channels (R<sub>d</sub>, G<sub>d</sub>, B<sub>d</sub>). The matrix is applied using floating point arithmetic precision (24 bits of precision), this way intermediate values during the process won't be lost as when using integer arithmetic.
+The first step *colorMatrix* does is to apply your *color matrix* to the input channels in order to get the intermediate RGB output channels (R<sub>d</sub>, G<sub>d</sub>, B<sub>d</sub>). The matrix is applied using floating point arithmetic precision (24 bits of precision). This way, intermediate values during the process won't be lost as when using integer arithmetic.
 
 Those intermediate output channels will have further processing before they are merged to build a RGB image, as is depicted with pseudo-code in the following picture. Remember the blue symbols are data you will input in *colorMatrix* dialog window. 
 

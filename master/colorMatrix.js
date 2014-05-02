@@ -32,42 +32,52 @@ var globalConstants =
 + "BLUE    = 2,"
 // Plug-in version number
 + "VER_NBR = '1.0',"
+// ID of script settings
++ "SETTINGS_KEY = 'odl_colorMatrix.set',"
 // buildOutChannel() function result indices
 + "IMG_PLUS  = 0,"
 + "IMG_NAME  = 1;";
 //--------------------------------------------------------------
 
-// Default dialog window arguments
-var factoryOptions =
-  { outputFileName: "Output",
-    outputFileFormat: "FITS",
-    outputFileNameExt: ".fit",
-    saveOutputChannels: false,
-    keepOutputChannels: true,
-    // outChannelAdu.max is used as divider to map pixel values into [0,1]
-    // before gamma correction. After applying gamma the pixel values are multiplied
-    // by outChannelAdu.max to recover the original scale
-    outChannelAdu: {min:0, max:16383},
-    // gamma reciprocal value
-    gamma: 2.2,
-    outChannelSuffix: {red:"_r", green:"_g", blue:"_b"},
-    colorMatrix: [[1.0, 1.0, 1.0], [1.0, 1.0, 1.0], [1.0, 1.0, 1.0]]
-  }
+// Run the colorMatrix script
+colorMatrix();
 
-  // Try to retrieve last used options, if not possible use
-  // factory default options
-  var defOptions = retrieveDlgArguments() || factoryOptions;
+/**
+*  Returns the colorMatrix default parameter values
+**/
+function getDefaultOptions() {
 
-// Run the command
-colorMatrix(defOptions);
+  // Default dialog window arguments
+  var factoryOptions =
+    { outputFileName: "Output",
+      outputFileFormat: "FITS",
+      outputFileNameExt: ".fit",
+      saveOutputChannels: false,
+      keepOutputChannels: true,
+      // outChannelAdu.max is used as divisor to map pixel values into [0,1]
+      // before gamma correction. After applying gamma the pixel values are multiplied
+      // by outChannelAdu.max to recover the original scale
+      outChannelAdu: {min:0, max:16383},
+      // gamma reciprocal value
+      gamma: 2.2,
+      outChannelSuffix: {red:"_r", green:"_g", blue:"_b"},
+      colorMatrix: [[1.0, 1.0, 1.0], [1.0, 1.0, 1.0], [1.0, 1.0, 1.0]]
+    }
 
-function colorMatrix(defOptions) {
+    // Try to retrieve last used options, if not possible use
+    // factory default options
+    return retrieveDlgArguments(factoryOptions) || factoryOptions;
+}
 
+function colorMatrix() {
+
+  // define global constants
   eval(globalConstants);
-  log("VAL_CANCEL:"+VAL_CANCEL);
 
+  // Get default options
+  var defOptions = getDefaultOptions();
+  
   var wList = WindowManager.getIDList();
-
   //there are less than 2 images or no images
   if (null == wList || wList.length<2){
       IJ.showMessage("Error", "There must be at least two windows open");
@@ -75,7 +85,7 @@ function colorMatrix(defOptions) {
       return;
   }
 
-  //get all the image titles so they can be shown in the dialog
+  //get all the image titles to show them in the dialog window
   var titles = new Array();
 
   for (var i=0, k=0; i<wList.length; i++) {
@@ -289,7 +299,7 @@ function colorMatrix(defOptions) {
   while (validation == VAL_ERROR);
 
   // Save the user inputs
-  saveDlgArguments(options)
+  saveDlgArguments(options);
 
   log("begin processing...");
 
@@ -298,6 +308,11 @@ function colorMatrix(defOptions) {
   var outGreenChannel = buildOutChannel(inputChannels, options, "green");
   var outBlueChannel = buildOutChannel(inputChannels, options, "blue");
 
+  // Revert the input channels
+  for (var i=0; i<3; i++) {
+    IJ.run(inputChannels[i], "Revert", "");
+  }
+  
   // Merge the channels into a stack
   IJ.run(outRedChannel[IMG_PLUS], "Merge Channels...",
                   "c1="+outRedChannel[IMG_NAME]+
@@ -329,11 +344,8 @@ function colorMatrix(defOptions) {
 **/
 function buildOutChannel(inChannels, options, color) {
 
-  //Color index in arrays
-  const
-    RED     = 0,
-    GREEN   = 1,
-    BLUE    = 2;
+  // define global constants
+  eval(globalConstants);
 
   // Revert the input channels
   for (var i=0; i<3; i++) {
@@ -357,7 +369,7 @@ function buildOutChannel(inChannels, options, color) {
   }
 
   // Scale the input channels
-  for (var i=0; i<3; i++) {
+  for (var i=0; i < 3; i++) {
     IJ.run(inChannels[i], "Multiply...", "value="+scales[i] );
   }
 
@@ -369,15 +381,13 @@ function buildOutChannel(inChannels, options, color) {
   // Rename the output channel image
   var imageName = getFileName(options, color);
 
-  // Renaming is not allowed only if already it is open
+  // Renaming is allowed only if already it is open
   closeImage(imageName);
-  log("imageName:" + imageName);
   outChannel.setTitle(imageName);
 
   // Clip out of range ADU values
   IJ.run(outChannel, "Min...", "value="+options["outChannelAdu"]["min"]);
   IJ.run(outChannel, "Max...", "value="+options["outChannelAdu"]["max"]);
-
 
   // Apply gamma correction
   if (options["gamma"] != 1) {
@@ -390,7 +400,8 @@ function buildOutChannel(inChannels, options, color) {
 
   // Set the proper title
   outChannel.setTitle(imageName);
-  
+  log("Image Name:" + imageName);
+
   // Save if required
   if (options["saveOutputChannels"])
     IJ.saveAs(outChannel, "FITS", imageName);
@@ -405,8 +416,8 @@ function buildOutChannel(inChannels, options, color) {
 **/
 function dlgParamsAreValid(options) {
 
+  // define global constants
   eval(globalConstants);
-  log("VAL_CANCEL:"+VAL_CANCEL);
 
   // Validate all the scales are valid numbers
   var arrColorMatrix = options["colorMatrix"];
@@ -472,8 +483,8 @@ function isValidNumber(number) {
 **/
 function showInputError(title, msg) {
 
+  // define global constants
   eval(globalConstants);
-  log("VAL_CANCEL:"+VAL_CANCEL);
   
   var uInput = IJ.showMessageWithCancel(title, msg);
   log("showInputError:" + VAL_ERROR);
@@ -498,9 +509,10 @@ function guessChannel(titles, suffix) {
 function closeImage(imageName) {
   var wList = WindowManager.getIDList();
   for (var i=0; i<wList.length; i++) {
-    var limp = WindowManager.getImage(wList[i]);
-    if (limp.getTitle() == imageName) {
-      IJ.run(limp, "Close");
+    var imp = WindowManager.getImage(wList[i]);
+    if (imp.getTitle() == imageName) {
+      // IJ.run(limp, "Close");
+      imp.close();
       return;
     }
   }
@@ -537,6 +549,14 @@ function log(txt) {
 *  required functionality.
 **/
 function saveDlgArguments(options) {
+  // define global constants
+  eval(globalConstants);
+  var preferences = new Prefs();
+  
+  log("saveDlgArguments: Options:" + options);
+  var strOptions = objToString(options);
+  log("saveDlgArguments: strOptions:" + strOptions);
+  preferences.set(SETTINGS_KEY, strOptions);
 }
 
 /**
@@ -544,6 +564,120 @@ function saveDlgArguments(options) {
 *
 *  Please read previous function comments
 **/
-function retrieveDlgArguments() {
-  return false;
+function retrieveDlgArguments(defOptions) {
+  // define global constants
+  eval(globalConstants);
+  var preferences = new Prefs();
+  
+  var strDefaults = objToString(defOptions);
+  var strOptions = preferences.get(SETTINGS_KEY, strDefaults);
+  log("strOptions: '" + strOptions +"'");
+  log("type of strOptions: " + typeof(strOptions));
+  
+  //cast strOptions to string    
+  strOptions = strOptions + " ;";
+  var arrValues = strOptions.split(/\s/);
+
+  log("arrValues: '" + arrValues +"'");
+  log("arrValues is array:" + Array.isArray(arrValues));
+  
+  var options = setObjValues([defOptions, arrValues])[0];
+  return options;
+}
+
+/**
+* Returns a list of space separated values contained 
+* in an object.
+*
+* The object can contain another objects, arrays or elemental 
+* data types.
+*
+* For example obj = {alfa:1, beta:['a', 'b', 'c'], kappa:{one:'one'}}
+* will return "1 a b c one"
+**/
+function objToString(obj) {
+  var s = "";
+  log("objToString, Obj: " + obj);
+  log("objToString, Type of Obj: " + typeof(obj));
+   
+  if (Array.isArray(obj))
+    for(var i=0; i < obj.length; i++) {
+      s = withTrailingSpace(s);
+      s += objToString(obj[i]);
+    }
+  else if (typeof(obj) == "object"
+           && !(obj instanceof String)
+           && !(obj instanceof Number)
+           && !(obj instanceof Boolean)
+          )
+    for(var key in obj) {
+      s = withTrailingSpace(s);
+      s += objToString(obj[key]) ;
+    }
+  else
+    s += obj;
+
+  return s;
+}
+
+/**
+*  Assign the options values to the components
+*  of the options object
+**/
+function setObjValues(objPlusArrVal) {
+  var obj = objPlusArrVal[0];
+  var arrVal = objPlusArrVal[1];
+  
+  log("ObjType:" + typeof(obj));
+  log("arrVal:" + arrVal);
+  
+  if (Array.isArray(obj))
+    for(var i=0; i < obj.length; i++) {
+      var objPlusVals = setObjValues([obj[i], arrVal]);
+      obj[i] = objPlusVals[0];
+      arrVal = objPlusVals[1];
+    }
+  else if (typeof(obj) == "object") 
+    for(var key in obj) {
+      var objPlusVals = setObjValues([obj[key], arrVal]);
+      obj[key] = objPlusVals[0];
+      arrVal = objPlusVals[1];
+    }
+  else {
+    var objType = typeof(obj);
+    var val = arrVal.shift();
+    switch (objType) {
+      case "string": 
+        obj = val;
+        break;
+        
+      case "number":
+        obj = parseFloat(val);
+        break;
+        
+      case "boolean":
+        obj = (val == "true") ? true : false;
+        break;
+        
+      default:
+        log( "Unexpected data type!!!");
+        throw "Unexpected data type!!!";
+        break;
+     }
+  }
+  
+  return [obj, arrVal];
+}
+
+/**
+* Ensure the string argument has a trailing space
+* when the string is not empty.
+**/
+function withTrailingSpace(s) {
+  if (s == "")
+    return s;
+  else if (s.charAt(s.length-1) != " ")
+    return s + " ";
+  else
+    return s;
 }

@@ -65,7 +65,7 @@ Before calling *colorMatrix*, you must have at least two images opened in *Image
 
 For the each of the **Red Channel**, **Green Channel** and **Blue Channel** parameters you must select one of the opened images. 
 
-*colorMatrix* will try to guess which of the opened images corresponds to each parameter and will show the dialog with those image titles selected as default values. The guessing is made by checking the image titles. If any of them contain the sub-strings "_r", "_g" or "_b" (for red, green and blue), it will be selected as the default image for the corresponding RGB channel. If there is no matching, *colorMatrix* will just select the first image in the *ImageJ* list of opened images. In any case, you can override this default selection and pick up the image you really want to use for each channel.
+*colorMatrix* will try to guess which of the opened images corresponds to each parameter and will show the dialog with those image titles selected as default values. The guessing is made by checking the image titles. If any of them contains the sub-strings "_r", "_g" or "_b" (for red, green and blue), it will be selected as the default image for the corresponding RGB channel. If there is no matching, *colorMatrix* will just select the first image in the *ImageJ* list of opened images. In any case, you can override this default selection and pick up the image you really want to use for each channel.
 
 ### Output Image Options ###
 
@@ -77,11 +77,11 @@ For the each of the **Red Channel**, **Green Channel** and **Blue Channel** para
     
     For example, if you have 14-bit input channels, you will have 14-bit output channels, and you may want the resulting RGB channels at that level of precision, perhaps to further processing those channels in *ImageJ* or maybe with another tool.
     
-    If you don't select this options, *colorMatrix* will anyway ask you if it is OK for you to close each of the resulting RGB image channels without saving it. This is an *ImageJ* behavior that can not be overrode.
+    If you don't select this option, *colorMatrix* will anyway ask you if it is OK for you to close each of the resulting RGB image channels without saving it. This is an *ImageJ* behavior that can not be overridden.
     
 *   **Gamma**: You must enter here the reciprocal of the value that *colorMatrix* must use in the *Gamma Correction* of the resulting channels. For example, for a gamma correction of `1/2.4` you should enter here `2.4`.
 
-    If you don't want *Gamma Correction* you must enter `1` for this parameter, you can not leave a blank here, otherwise you will get a message error. If you set `1` for this parameter nothing related to *Gamma Correction* at all will be done to the channels.
+    If you don't want *Gamma Correction* you must enter `1` for this parameter, you can not leave a blank here, otherwise you will get an error message. If you set `1` for this parameter nothing related to *Gamma Correction* at all will be done to the channels.
     
 *   **Minimum output ADU**
 *   **Maximum output ADU**

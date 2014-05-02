@@ -136,7 +136,7 @@ Follow the same steps as described above for Windows. However, in Mac OS X, the 
 
 Contact
 -------
-Please feel free to contact me for any suggestion. Yo can :email: at "&lt;my name&gt; `at` odeLama `dot` com". By the way, &lt;my name&gt; is Oscar.
+Please feel free to contact me for any suggestion. You can sen your :email: to "oscar `at` odeLama `dot` com".
 
 License
 -------

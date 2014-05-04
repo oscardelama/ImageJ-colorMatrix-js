@@ -8,7 +8,7 @@ This tool has been created for the study and evaluation of such color matrices. 
 - - - - 
 Table of Contents
 -----------------
-- [What it does :question:](#what-it-does)  
+- [What it does](#what-it-does)  
 - [Usage](#usage)  
   * [Input color channels](#input-color-channels)  
   * [Output Image Options](#output-image-options)  

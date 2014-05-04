@@ -1,3 +1,5 @@
 local/*
-local/img/*
+local/*/*
+*/local/*
+*/local/*/*
 *.lnk

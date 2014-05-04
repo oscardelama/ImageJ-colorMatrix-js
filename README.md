@@ -136,7 +136,7 @@ Follow the same steps as described above for Windows. However, in Mac OS X, the 
 
 Contact
 -------
-Please feel free to contact me for any suggestion. You can send your :email: to "oscar `at` odeLama `dot` com".
+Please feel free to contact me for any suggestion. You can send your :email: to "oscar &#64; odeLama `dot` com".
 
 *:copyright:* License
 -------------------

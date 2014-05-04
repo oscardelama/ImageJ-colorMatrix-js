@@ -534,7 +534,8 @@ function getImg(imageName) {
 *  Allows to easily activate/deactivate all the logging.
 **/
 function log(txt) {
-  IJ.log(txt);
+  // commented out for production version
+  // IJ.log(txt);
 }
 
 /**

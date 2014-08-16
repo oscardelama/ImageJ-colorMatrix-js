@@ -106,6 +106,10 @@ In the same sense, if you paste a spreadsheet horizontal range selection of thre
 
 Of course, it is not mandatory to copy and paste the matrix values. You can enter and edit them one by one.
 
+Practical Use Example
+---------------------
+This article about ["developing a raw image photo file by hand"](http://www.odelama.com/photo/Developing-a-RAW-Photo-by-hand/Developing-a-RAW-Photo-by-hand_Part-2/) shows different ways to find or compute the adequate color matrix for a photo and applies them using colorMatrix.
+
 Installation
 -------------
 

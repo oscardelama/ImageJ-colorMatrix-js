@@ -2,12 +2,13 @@ Welcome to colorMatrix :large_blue_diamond:
 ===========================================
 colorMatrix is an [ImageJ](http://imagej.nih.gov/ij/) script (*colorMatrix*) that helps you to transform an image from one RGB color space to another one. This transformation is made through the use of a *color matrix* given by you.
 
-EDIT 2015-Mar-11:
- There is a new version of ImageJ called [ImageJ2](http://fiji.sc/ImageJ2) and also there is a distribution called [Fiji](http://fiji.sc/Welcome). This plug-in does not work with those versions of ImageJ. They have made some backward incompatible changes in the expected code for a javascript plug-in that causes to colorMatrix to do not work at all.
- 
- This *colorMatrix* plug-in is compatible with the [latest version (1.48) of ImageJ1](http://rsb.info.nih.gov/ij/download.html). You should download and use that version if you wan to use *colorMatrix*.
-
 This tool has been created for the study and evaluation of such color matrices. This way, you can analyse the results from one *color matrix* isolated from additional adjustments that are done to the image &mdash;officially or "under the hood"&mdash; when you use that color matrix inside of a photo or image editing tool.
+
+EDIT 2015-Mar-11:
+There is a new version of ImageJ called [ImageJ2](http://fiji.sc/ImageJ2) and also there is a distribution called [Fiji](http://fiji.sc/Welcome). This plug-in does not work with those versions of ImageJ. They have made some backward incompatible changes in the expected code for a javascript plug-in that causes to colorMatrix to do not work at all.
+ 
+This *colorMatrix* plug-in is compatible with the [latest version (1.48) of ImageJ1](http://rsb.info.nih.gov/ij/download.html). You should download and use that version if you wan to use *colorMatrix*.
+
 <br/>
 
 - - - - 

@@ -14,6 +14,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 **/
 
+importClass(Packages.ij.IJ);
+importClass(Packages.ij.Prefs);
+importClass(Packages.ij.plugin.frame.RoiManager);
+importClass(Packages.ij.gui.GenericDialog);
 importClass(Packages.java.awt.event.TextListener);
 
 //--------------------------------------------------------------
@@ -36,8 +40,11 @@ var globalConstants =
 + "SETTINGS_KEY = 'odl_colorMatrix.set',"
 // buildOutChannel() function result indices
 + "IMG_PLUS  = 0,"
+//Number of digits for each scale in the color matrix
++ "SCALE_DIGITS  = 7,"
 + "IMG_NAME  = 1;";
 //--------------------------------------------------------------
+
 
 // Run the colorMatrix script
 colorMatrix();
@@ -120,8 +127,6 @@ function colorMatrix() {
     gd.addNumericField("Maximum output ADU :", defOptions["outChannelAdu"]["max"], 0);
 
   /* --- Color matrix scales  --*/
-    //Number of digits for each scale in the color matrix
-    const SCALE_DIGITS = 7;
     var arrColorMatrix = defOptions["colorMatrix"];
 
     // First scale field index
@@ -580,7 +585,7 @@ function retrieveDlgArguments(defOptions) {
   var arrValues = strOptions.split(/\s/);
 
   log("arrValues: '" + arrValues +"'");
-  log("arrValues is array:" + Array.isArray(arrValues));
+  // log("arrValues is array:" + Array.isArray(arrValues));
   
   var options = setObjValues([defOptions, arrValues])[0];
   return options;
@@ -600,7 +605,12 @@ function objToString(obj) {
   var s = "";
   log("objToString, Obj: " + obj);
   log("objToString, Type of Obj: " + typeof(obj));
-   
+  
+if (!Array.isArray) {
+    Array.isArray = function(obj) {
+      return Object.prototype.toString.call(obj) == '[object Array]';
+    }
+}
   if (Array.isArray(obj))
     for(var i=0; i < obj.length; i++) {
       s = withTrailingSpace(s);
@@ -626,6 +636,11 @@ function objToString(obj) {
 *  of the options object
 **/
 function setObjValues(objPlusArrVal) {
+	if (!Array.isArray) {
+	    Array.isArray = function(obj) {
+	      return Object.prototype.toString.call(obj) == '[object Array]';
+	    }
+	}
   var obj = objPlusArrVal[0];
   var arrVal = objPlusArrVal[1];
   
